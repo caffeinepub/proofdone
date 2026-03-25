@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "BricolageGrotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Dark mode by default – ProofDone is dark-only */
+    --background: 0.13 0.018 222;
+    --foreground: 0.93 0.012 210;
+    --card: 0.18 0.022 222;
+    --card-foreground: 0.93 0.012 210;
+    --popover: 0.21 0.025 222;
+    --popover-foreground: 0.93 0.012 210;
+    --primary: 0.6 0.2 265;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.24 0.028 222;
+    --secondary-foreground: 0.93 0.012 210;
+    --muted: 0.22 0.024 222;
+    --muted-foreground: 0.65 0.018 215;
+    --accent: 0.6 0.2 265;
+    --accent-foreground: 0.98 0 0;
+    --destructive: 0.6 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.28 0.03 222;
+    --input: 0.24 0.028 222;
+    --ring: 0.6 0.2 265;
+    --chart-1: 0.6 0.2 265;
+    --chart-2: 0.65 0.18 160;
+    --chart-3: 0.7 0.18 80;
+    --chart-4: 0.65 0.2 310;
+    --chart-5: 0.6 0.22 25;
+    --sidebar: 0.16 0.02 222;
+    --sidebar-foreground: 0.93 0.012 210;
+    --sidebar-primary: 0.6 0.2 265;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.24 0.028 222;
+    --sidebar-accent-foreground: 0.93 0.012 210;
+    --sidebar-border: 0.28 0.03 222;
+    --sidebar-ring: 0.6 0.2 265;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@keyframes pulse-ring {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes tick {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s ease-in-out infinite;
+}
+
+.animate-tick {
+  animation: tick 1s ease-in-out infinite;
+}
